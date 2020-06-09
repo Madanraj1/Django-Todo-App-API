@@ -91,7 +91,7 @@
         //wrapper.innerHTML = ''
 
 
-        var url = 'http://127.0.0.1:8000/api/task-list/'
+        var url = 'https://madanraj-todo-api-app.herokuapp.com/task-list/' 
 
         fetch(url)
         .then(( resp ) =>  resp.json()) 
@@ -184,10 +184,10 @@
         e.preventDefault()
         console.log('form submitted')
 
-        var url = 'http://127.0.0.1:8000/api/task-create/'
+        var url = 'https://madanraj-todo-api-app.herokuapp.com/task-create/'
         var title = document.getElementById('title').value 
         if (activeItem != null){
-        var url = `http://127.0.0.1:8000/api/task-update/${activeItem.id}/`
+        var url = `https://madanraj-todo-api-app.herokuapp.com/api/task-update/${activeItem.id}/`
         activeItem = null
 
         }
@@ -220,7 +220,7 @@
 // to delete items
     function deleteItem(item) {
         console.log('delete clicked')
-        fetch(`http://127.0.0.1:8000/api/task-delete/${item.id}/`,{
+        fetch(`https://madanraj-todo-api-app.herokuapp.com/api/task-delete/${item.id}/`,{
             method: 'DELETE',
             headers: {
                 'Content-type' : 'application/json',
@@ -235,7 +235,7 @@
     function strikeUnstrike(item) {
         console.log('strike clicked')
         item.completed = !item.completed
-        fetch(`http://127.0.0.1:8000/api/task-update/${item.id}/`,{
+        fetch(`https://madanraj-todo-api-app.herokuapp.com/api/task-update/${item.id}/`,{
             method: 'POST',
             headers: {
                 'Content-type' : 'application/json',
